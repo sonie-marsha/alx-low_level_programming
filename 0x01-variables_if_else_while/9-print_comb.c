@@ -9,12 +9,13 @@
 
 int main(void)
 {
-	int num1;
+	int num;
 
-	for (num1 = 0; num1 < 10; num1++)
+	for (num = 0; num < 10; num++)
 	{
-		putchar(num1 + '0'); /* converts to its ascii value */
-		if (num1 != 9)
+		putchar((num % 10) + '0'); /* converts the int to its corresponding character representation */
+		if (num == 9)
+			continue;
 		{
 			putchar(',');
 			putchar(' ');
