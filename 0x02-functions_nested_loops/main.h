@@ -1,5 +1,5 @@
-#ifndefine
-#def
+#ifdef
+#define
 
 int _putchar(char c);
 
