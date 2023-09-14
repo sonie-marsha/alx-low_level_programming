@@ -10,7 +10,7 @@
 int main (void)
 {
 	int fib1, fib2, nextFib;
-	long long sum = 2;
+	unsigned long sum = 2;
 
 	fib1 = 1;
 	fib2 = 2;
@@ -29,7 +29,7 @@ int main (void)
 		fib2 = nextFib;
 	}
 
-	printf("Sum is: %lld\n", sum);
+	printf("Sum is: %lu\n", sum);
 
 	return (0);
 }
