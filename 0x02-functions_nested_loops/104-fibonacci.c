@@ -14,7 +14,7 @@ int main(void)
 	fib1 = 1;
 	fib2 = 1;
 
-	for (i = 2; i <= 99; i++)
+	for (i = 2; i <= 100; i++)
 	{
 		printf("%lu, ", fib2);
 
