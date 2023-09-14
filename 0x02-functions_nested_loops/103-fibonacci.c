@@ -7,7 +7,7 @@
  *Return: 0
  */
 
-int main (void)
+int main(void)
 {
 	int fib1, fib2, nextFib;
 	unsigned long sum = 2;
@@ -29,7 +29,7 @@ int main (void)
 		fib2 = nextFib;
 	}
 
-	printf("Sum is: %lu\n", sum);
+	printf("%lu\n", sum);
 
 	return (0);
 }
