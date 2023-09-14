@@ -12,7 +12,7 @@ int main(void)
 	int i;
 
 	fib1 = 1;
-	fib2 = 1;
+	fib2 = 1; /* Initialized fib2 to 1 to print it out */
 
 	for (i = 2; i < 100; i++)
 	{
