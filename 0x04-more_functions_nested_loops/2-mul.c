@@ -5,14 +5,10 @@
  *@a: first int
  *@b: second int
  *
- *Return: mul_result
+ *Return: int
  */
 
 int mul(int a, int b)
 {
-	int mul_result;
-
-	mul_result = a * b;
-
-	return (mul_result);
+	return (a * b);
 }
