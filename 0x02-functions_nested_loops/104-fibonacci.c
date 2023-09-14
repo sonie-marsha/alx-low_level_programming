@@ -16,7 +16,7 @@ int main(void)
 
 	for (i = 2; i <= 97; i++)
 	{
-		printf("%lu", fib2);
+		printf("%lu, ", fib2);
 
 		nextFib = fib1 + fib2;
 
