@@ -7,14 +7,33 @@
  *Return: 0
  */
 
+int is_prime(long n)
+{
+	long i;
+	
+	if (n <= 1)
+		return (0);
+	if (n <= 3)
+		return (1);
+	if (n % 2 == 0 || n % 3 == 0)
+		return (0);
+
+	for (i = 5; i * i <= n; i += 6)
+	{
+		if (n % i == 0 || n % (i +2) == 0)
+			return (0);
+	}
+
+	return (1);
+}
 int main(void)
 {
-	int i;
+	long i;
 	long number = 612852475143;
 
-	for (i = (int)sqrt(number); i > 2; i--)
+	for (i = (long)sqrt(number); i > 1; i--)
 	{
-		if (number % i == 0)
+		if (number % i == 0 && is_prime(i))
 		{
 			printf("%ld\n", i);
 			break;
