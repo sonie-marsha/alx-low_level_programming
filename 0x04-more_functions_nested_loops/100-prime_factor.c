@@ -10,13 +10,13 @@
 int main(void)
 {
 	int i;
-	long long number = 612852475143;
+	long number = 612852475143;
 
 	for (i = (int)sqrt(number); i > 2; i--)
 	{
 		if (number % i == 0)
 		{
-			printf("%lld\n", i);
+			printf("%ld\n", i);
 			break;
 		}
 	}
