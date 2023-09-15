@@ -13,5 +13,6 @@ void more_numbers(void);
 int _isdigit(int c);
 void print_triangle(int size);
 int _isupper(int c);
+int is_prime(long n);
 
 #endif

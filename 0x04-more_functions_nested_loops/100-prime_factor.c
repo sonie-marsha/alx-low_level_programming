@@ -1,16 +1,19 @@
 #include <stdio.h>
 #include <math.h>
+#include "main_h"
 
 /**
- *main - entry point
+ *is_prime - checks if number is prime
+ *ensuring the largest factor is indeed prime
+ *@n: number to check
  *
- *Return: 0
+ *Return: 1 if prime, o/w 0
  */
 
 int is_prime(long n)
 {
 	long i;
-	
+
 	if (n <= 1)
 		return (0);
 	if (n <= 3)
@@ -20,12 +23,19 @@ int is_prime(long n)
 
 	for (i = 5; i * i <= n; i += 6)
 	{
-		if (n % i == 0 || n % (i +2) == 0)
+		if (n % i == 0 || n % (i + 2) == 0)
 			return (0);
 	}
 
 	return (1);
 }
+
+/**
+ *main - entry point
+ *
+ *Return (0)
+ */
+
 int main(void)
 {
 	long i;
