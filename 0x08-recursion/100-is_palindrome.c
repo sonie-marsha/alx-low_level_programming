@@ -1,6 +1,5 @@
 #include "main.h"
-#include <string.h>
-
+#include <ctype.h>
 
 /**
  *is_palindrome - check str if palindrome
@@ -12,12 +11,21 @@
 int is_palindrome(char *s)
 {
 	int len = strlen(s);
+	int i = 0;
+	int j = len -1;
 
-	if (len <= 1)
-		return (1);
+	while (i < j)
+	{
+		while (i < len && !isalnum(s[i]))
+			i++;
+		while (j >= 0 && !isalnum(s[j]))
+			j--;
+		if (i < j && tolower(s[i]) != tolower(s[j]))
+			return (0);
 
-	if (s[0] != s[len - 1])
-		return (0);
+		i++;
+		j--;
+	}
 
-	return (is_palindrome(s + 1) && is_palindrome(s + len - 1 - 1));
+	return (1);
 }
