@@ -1,32 +1,48 @@
 #include "main.h"
-#include <string.h>
-#include <ctype.h>
 
 /**
- *is_palindrome - check str if palindrome
- *@s: str to be checked
+ *len - function that returns the len of a str
+ *@s: string
  *
- *Return: 1 if palindrome 0 o/w
+ *Return: len
  */
 
-int is_palindrome(char *s)
+int len(char *s)
 {
-	int len = strlen(s);
-	int i = 0;
-	int j = len -1;
-
-	while (i < j)
+	if (*s != '\0')
 	{
-		while (i < len && !isalnum(s[i]))
-			i++;
-		while (j >= 0 && !isalnum(s[j]))
-			j--;
-		if (i < j && tolower(s[i]) != tolower(s[j]))
-			return (0);
-
-		i++;
-		j--;
+		return (1 + len(s + 1));
 	}
+	return (0);
+}
 
-	return (1);
+/**
+ *check - helper function
+ *@s: string
+ *@n: number
+ *
+ *Return: checks
+ */
+
+int check(char *s, int n)
+{
+	if (n <= 0)
+		return (1);
+	if (*s != *(s + n -1))
+		return (0);
+	else
+		return (check (s + 1, n - 2));
+}
+
+/**
+ *is_palindrome - checks if str is palindrome
+ *@s: str
+ *Return: 1 if palindrome 0 if not
+ */
+
+int is_palindrome( char *s)
+{
+	int n = len(s);
+
+	return (check(s, n));
 }
