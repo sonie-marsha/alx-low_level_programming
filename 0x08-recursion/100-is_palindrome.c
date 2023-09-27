@@ -28,10 +28,10 @@ int check(char *s, int n)
 {
 	if (n <= 0)
 		return (1);
-	if (*s != *(s + n -1))
+	if (*s != *(s + n - 1))
 		return (0);
 	else
-		return (check (s + 1, n - 2));
+		return (check(s + 1, n - 2));
 }
 
 /**
@@ -40,7 +40,7 @@ int check(char *s, int n)
  *Return: 1 if palindrome 0 if not
  */
 
-int is_palindrome( char *s)
+int is_palindrome(char *s)
 {
 	int n = len(s);
 
