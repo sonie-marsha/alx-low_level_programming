@@ -1,7 +1,27 @@
 #include "main.h"
 
 /**
- *is_prime_number - finds prime numbers
+ *is_prime_recursive - checks if int is a prime number recursively
+ *@n: int to be checked
+ *@div: divisor being checked
+ *
+ *Return: 1 if prime o/w 0
+ */
+
+int is_prime_recursive(int n, int div)
+{
+	if (n <= 1)
+		return (0);
+	if (div == 1)
+		return (1);
+	if (n % div == 0)
+		return (0);
+
+	return (is_prime_recursive(n, div -1));
+}
+
+/**
+ *is_prime_number - checks if n is a prime number
  *@n: int to be checked
  *
  *Return: 1 if prime o/w 0
@@ -9,20 +29,5 @@
 
 int is_prime_number(int n)
 {
-	int i;
-
-	if (n <= 1)
-		return (0);
-	if (n <= 3)
-		return (1);
-	if (n % 2 == 0 || n % 3 == 0)
-		return (0);
-
-	for (i = 5; i * i <= n; i += 6)
-	{
-		if (n % i == 0 || n % (i + 2) == 0)
-			return (0);
-	}
-
-	return (1);
+	return (is_prime_recursive(n, n / 2));
 }
