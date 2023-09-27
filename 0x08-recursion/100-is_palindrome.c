@@ -19,5 +19,5 @@ int is_palindrome(char *s)
 	if (s[0] != s[len - 1])
 		return (0);
 
-	return (is_pallindrome(s + 1) && is_pallindrome(s + len -1 - 1));
+	return (is_palindrome(s + 1) && is_palindrome(s + len -1 - 1));
 }
