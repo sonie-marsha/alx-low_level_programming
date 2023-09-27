@@ -14,5 +14,22 @@ int _sqrt_recursion(int n)
 	if (n == 0 || n == 1)
 		return (n);
 	else
-		return (_sqrt_recursion(n));
+		return (_sqrt_recursive(n, 1));
+}
+
+/**
+ *_sqrt_recursive - recursive func that finds square root
+ *@n: int
+ *@guess: current guess
+ *
+ *Return: sqrt
+ */
+
+int _sqrt_recursive(int n, int guess)
+{
+	if (guess * guess == n)
+		return (guess);
+	if (guess * guess > n)
+		return (-1);
+	return (_sqrt_recursive(n, guess + 1));
 }
