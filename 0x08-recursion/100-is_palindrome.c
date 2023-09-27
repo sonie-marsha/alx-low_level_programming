@@ -3,13 +3,13 @@
 
 
 /**
- *is_pallindrome - check str if pallindrome
+ *is_palindrome - check str if palindrome
  *@s: str to be checked
  *
- *Return: 1 if pallindrome 0 o/w
+ *Return: 1 if palindrome 0 o/w
  */
 
-int is_pallindrome(char *s)
+int is_palindrome(char *s)
 {
 	int len = strlen(s);
 
