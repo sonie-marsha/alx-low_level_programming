@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <stdbool.h>
+#include "main.h"
 #include <string.h>
+
 
 /**
  *is_pallindrome - check str if pallindrome
