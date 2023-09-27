@@ -12,22 +12,12 @@
 int is_pallindrome(char *s)
 {
 	int len = strlen(s);
-	int i, j;
-	char c1, c2;
 
-	for (i = 0 j = len - 1; i < j; i++, j--)
-	{
-		while (!isalnum(s[i]) && i < j)
-			i++;
-		while (!isalnum(s[j]) && i < j)
-			j--;
+	if (len <= 1)
+		return (1);
 
-		char c1 = tolower(s[i]);
-		char c2 = tolower(s[j]);
+	if (s[0] != s[len -1])
+		return (0);
 
-		if (c1 != c2)
-			return (0);
-	}
-
-	return (1);
+	return (is_pallindrome(s + 1)) && is_pallindrome(s + len -1-1));
 }
