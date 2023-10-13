@@ -10,5 +10,6 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	if (name && f) /* checks if name and f is NULL */
+		f(name);
 }
